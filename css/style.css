@@ -1,0 +1,263 @@
+body {
+    font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #FFF;
+    background: #1e90ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 0 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 0px 20px 0px;
+}
+
+.card {
+    user-select: none;
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    background-color: #87cefa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s forwards;
+    opacity: 0;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.card:hover {
+    background-color: #1e90ff;
+}
+
+.card.flipped {
+    background-color: rgba(255,255,255,0.9);
+    transform: rotateY(180deg);
+}
+
+.card.matched {
+    background-color: #98fb98;
+    cursor: default;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    user-select: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.btn.active {
+    background-color: rgba(255, 128, 0, 1);
+}
+
+.try_again {
+    display: block;
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#timer {
+    font-size: 24px;
+    margin: 0 auto 20px auto;
+    width: 128px;
+    text-align: left;
+}
+
+.container {
+    width: 100%;
+    background: #fff;
+    margin-top: 40px;
+}
+.results {
+    padding: 0px 30px;
+    margin: 40px auto;
+    border-radius: 5px;
+    max-width: 600px;
+    min-height: 300px;
+    width: 100%;
+    color: #1e90ff;
+}
+
+.results h2 {
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+}
+
+.results ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.results li {
+    margin-bottom: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 33.333333%;
+}
+
+.results li span {
+    display: inline-flex;
+}
+
+.results li span.score-name {
+    text-wrap: nowrap;
+    font-size: 12px;
+    color: #87cefa;
+}
+.results li span.score-time {
+    margin-bottom: 10px;
+}
+
+.notification {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 128, 0, 0.95);
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    transition: opacity .5s ease-in-out;
+    z-index: 9999;
+    opacity: 0;
+}
+
+.time {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#user-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#user-container label {
+    margin-bottom: 10px;
+    margin-right: 15px;
+    display: inline-flex;
+    font-size: 18px;
+}
+
+input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: all .3s ease;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.congrats,
+.time {
+    margin-bottom: 20px;
+}
+
+.completed {
+    color: #FFF !important;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation: pulse 1s infinite;
+    transition: opacity 2.5s ease;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    display: none;
+}
+
+.radio-label .fa-circle-user {
+    margin-right: 10px;
+}
+
+.radio-label input[type="radio"]:checked+.fa-circle-user {
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
