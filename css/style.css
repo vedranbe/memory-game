@@ -187,6 +187,12 @@ h1 {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    width: 600px;
+    max-width: 90%;
+}
+
+#user-container > div {
+    margin: 10px 0;
 }
 
 #user-container label {
@@ -194,6 +200,10 @@ h1 {
     margin-right: 15px;
     display: inline-flex;
     font-size: 18px;
+}
+
+#user-container label.add {
+    margin-right: 0;
 }
 
 input[type="text"] {
